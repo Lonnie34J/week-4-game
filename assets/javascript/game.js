@@ -6,6 +6,7 @@ userScore=0;
 gemScore = $("#gemPower");
 gemScore.html(userScore);
 
+
 //generates random number for evil power score
 var compScoreTwo=Math.floor(Math.random()*100+20);
 
@@ -14,6 +15,8 @@ var newCompScore = $("#compScore");
 newCompScore.html(compScoreTwo);
 
 
+//starts game
+function start(){
 //crystal gems random numbers
 amethyst=Math.floor(Math.random()*12)+1;
 console.log("amethyst:"+ amethyst);
@@ -50,7 +53,7 @@ $("#pearl").on("click", function(){
 $("#steven").on("click", function(){
 
 	console.log(userScore+=steven);
-	gemScore = $("#gemPower");
+	gemScnore = $("#gemPower");
 	gemScore.html(userScore);
 
 });
@@ -62,6 +65,24 @@ $("#garnet").on("click", function(){
 	gemScore.html(userScore);
 
 });
+}
+
+function finish(){
+	if (userScore>compScoreTwo){
+		userLosses++;
+		alert("you loss");
+	}
+
+	else if(userScore==compScoreTwo){
+		userWins++;
+		alert("you win");
+	}
+
+}
+
+
+start();
+finish();
 
 
 });
