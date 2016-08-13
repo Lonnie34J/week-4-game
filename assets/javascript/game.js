@@ -7,11 +7,11 @@ gemScore = $("#gemPower");
 gemScore.html(userScore);
 
 
-//generates random number for evil power score
-var compScoreTwo=Math.floor(Math.random()*100+20);
+//generates random number for corrupted power score
+compScoreTwo=Math.floor(Math.random()*100+20);
 
 //adds the randomly generated number to the page
-var newCompScore = $("#compScore");
+newCompScore = $("#compScore");
 newCompScore.html(compScoreTwo);
 
 
@@ -53,7 +53,7 @@ $("#pearl").on("click", function(){
 $("#steven").on("click", function(){
 
 	console.log(userScore+=steven);
-	gemScnore = $("#gemPower");
+	gemScore = $("#gemPower");
 	gemScore.html(userScore);
 
 });
@@ -70,10 +70,8 @@ $("#garnet").on("click", function(){
 function finish(){
 	if (userScore>compScoreTwo){
 		userLosses++;
-		alert("you loss");
-	}
-
-	else if(userScore==compScoreTwo){
+		alert("you lose");
+	}else if(userScore==compScoreTwo){
 		userWins++;
 		alert("you win");
 	}
